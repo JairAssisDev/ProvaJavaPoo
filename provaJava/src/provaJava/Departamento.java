@@ -3,13 +3,18 @@ package provaJava;
 import java.util.List;
 
 public class Departamento {
-	List<Funcionario>funcionarios;
+	private List<Funcionario>funcionarios;
 	private String nome;
-	Empresa empresa;
-	public Departamento(String nome, Empresa empresa) {
+	
+	public Departamento(List<Funcionario> funcionarios, String nome) {
+		super();
+		this.funcionarios = funcionarios;
+		this.nome = nome;
+	}
+	public Departamento(String nome) {
 		super();
 		this.nome = nome;
-		this.empresa = empresa;
+		
 	}
 	public Departamento() {
 		
@@ -20,11 +25,12 @@ public class Departamento {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Empresa getEmpresa() {
-		return empresa;
+	
+	public List<Funcionario> getFuncionarios() {
+		return funcionarios;
 	}
-	public void setEmpresa(Empresa empresa) {
-		this.empresa = empresa;
+	public void setFuncionarios(List<Funcionario> funcionarios) {
+		this.funcionarios = funcionarios;
 	}
 	
 }

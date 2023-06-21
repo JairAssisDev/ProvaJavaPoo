@@ -7,32 +7,59 @@ public class AppPrincipal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		List<Funcionario>funcionarios= new ArrayList<Funcionario>();
+
+		Funcionario funcionario1 = new Funcionario("jair", 22,"homen","DEV" , 3000.0);
+
+		Funcionario funcionario2 = new Funcionario("maria", 21,"mulher","Estagiaria" , 1000.0);
+
+		Funcionario funcionario3 = new Funcionario("mario", 27,"homen","DEV" , 5000.0);
+
+		Funcionario funcionario4 = new Funcionario("claudio", 22,"homen","psicologo" , 3000.0);
+
+		Funcionario funcionario5 = new Funcionario("fernanda", 21,"mulher","Estagiaria" , 1000.0);
+
+		Funcionario funcionario6 = new Funcionario("paulo", 27,"homen","gestão" , 5000.0);
+
+		List<Funcionario>listafuncionarios= new ArrayList<Funcionario>();
+		listafuncionarios.add(funcionario1);
+		listafuncionarios.add(funcionario2);
+		listafuncionarios.add(funcionario3);
+		List<Funcionario>listafuncionarios2= new ArrayList<Funcionario>();
+		listafuncionarios2.add(funcionario4);
+		listafuncionarios2.add(funcionario5);
+		listafuncionarios2.add(funcionario6);
+
+		Departamento departamento = new Departamento(listafuncionarios,"TI");
+
+		Departamento departamento2 = new Departamento(listafuncionarios2,"RH");
 		
-		Empresa empresa = new Empresa("LeoSoft S/A", 2323232);
+
+		List<Departamento>departamentos = new ArrayList<Departamento>();
+		departamentos.add(departamento);
+		departamentos.add(departamento2);
+
+		Empresa empresa = new Empresa(departamentos,"LeoSoft S/A", 2323232);
 		
-		Departamento departamento = new Departamento("TI", empresa);
-		
-		Funcionario funcionario1 = new Funcionario("jair", 22,"homen","DEV" , 3000.0, departamento);
-		
-		Funcionario funcionario2 = new Funcionario("maria", 21,"homen","Estagiaria" , 3000.0, departamento);
-		
-		Funcionario funcionario3 = new Funcionario("mario", 27,"homen","DEV" , 3000.0, departamento);
-		
-		funcionarios.add(funcionario1);
-		funcionarios.add(funcionario2);
-		funcionarios.add(funcionario3);
-		
-	 for (Funcionario funcionario : funcionarios) {
-		 System.out.println(funcionario.getCargo());
-		 System.out.println(funcionario.getNome());
-		 System.out.println(funcionario.getIdade());
-		 System.out.println(funcionario.getGenero());
-		 System.out.println(funcionario.departamento.getNome());
-		 System.out.println(funcionario.departamento.empresa.getNome());
-		 System.out.println(funcionario.departamento.empresa.getCnpj());
-		 System.out.println("-------------");
-	}
+
+		System.out.println("Empresa: "+empresa.getNome());
+		System.out.println("Cnpj: "+empresa.getCnpj());
+		for (Departamento Listadepartamento : empresa.getDepartamentos()) {
+			System.out.println("Nome do Departamento: "+Listadepartamento.getNome());
+			System.out.println("---------------------------------");
+			for (Funcionario funcionario : Listadepartamento.getFuncionarios()) {
+				if (funcionario.getSalario()>= 1500 ) {
+
+					System.out.println(funcionario.getCargo());
+					System.out.println(funcionario.getNome());
+					System.out.println(funcionario.getIdade());
+					System.out.println(funcionario.getGenero());
+					System.out.println("---------------------------------");
+
+				}
+
+			}
+		}
+
 	}
 
 }

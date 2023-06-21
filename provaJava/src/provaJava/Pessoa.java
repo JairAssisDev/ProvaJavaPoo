@@ -5,6 +5,7 @@ public abstract class Pessoa {
 	private String nome;
 	private int idade;
 	private String genero;
+	public abstract String falar();
 	
 	public Pessoa(String nome, int idade, String genero) {
 		super();
@@ -34,6 +35,5 @@ public abstract class Pessoa {
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
-	
 	
 }
