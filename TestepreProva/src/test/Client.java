@@ -22,6 +22,10 @@ public class Client {
 	public void setProdutos(List<Produto> produtos) {
 		this.produtos = produtos;
 	}
+
+	public String  falar(){
+		System.out.println("oi galera");
+	}
 	
 	
 }
