@@ -14,7 +14,7 @@ public class Quadrado extends Forma {
 	@Override
 	public double calcularArea() {
 		// TODO Auto-generated method stub
-		double x =lado* 2;
+		double x =lado** 2;
 		return x ;
 	}
 
