@@ -37,7 +37,7 @@ public class AppPrincipal {
 				
 				if(forma instanceof Triangulo) {
 					System.out.println("area Tringulo "+forma.calcularArea());
-					
+				lkkkk
 					System.out.println("-------------------------------");
 					
 				}
